@@ -3,7 +3,40 @@ let username = document.getElementById("username");
 let textarea = document.getElementById("textarea");
 let img = document.getElementById("img");
 let infouser = document.getElementById("infouser")
+let usermasg = document.getElementById("usernamemassge");
+let texareamasg = document.getElementById("textarreamassge");
+let imgmassg = document.getElementById("imgmassg");
+let pstmassg = document.getElementById("pstmassg");
 btn.addEventListener("click", () => {
+
+    if(username.value.length <= 4){
+        usermasg.innerText = "Username must be more than 4 characters"
+        return;
+    }
+
+    if(textarea.value.length <= 6){
+        texareamasg.innerText = "Post text must be more than 6 characters"
+        return;
+    }
+
+    if(img.value == ""){
+        imgmassg.innerText = "Add image link"
+        return;
+    }
+    // let userChicking =  true;
+    // fetch("https://68219a08259dad2655afc189.mockapi.io/post")
+    // .then((response) => response.json())
+    // .then((data) => {
+    //     data.map((arr) => {
+    //         userChicking = userChicking && (username.value !== arr.uusername);
+    //     });
+    // })
+
+    // if(!userChicking){
+    //     pstmassg.innerText = "This username already exists."
+    //     return;
+    // }
+
     fetch('https://68219a08259dad2655afc189.mockapi.io/post', {
         method: 'POST',
         body: JSON.stringify({
