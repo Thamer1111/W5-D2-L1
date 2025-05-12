@@ -14,6 +14,8 @@ btn.addEventListener("click", () => {
         headers: {
             'Content-type': 'application/json; charset=UTF-8',
         },
+    }).then(() => {
+        location.reload();
     })
 })
 
@@ -43,7 +45,9 @@ fetch("https://68219a08259dad2655afc189.mockapi.io/post")
             del.addEventListener("click", () => {
                 fetch(`https://68219a08259dad2655afc189.mockapi.io/post/${arr.id}`, {
                     method: 'DELETE',
-                });
+                }).then(() => {
+                    location.reload();
+                })
             })
 
             card.appendChild(h4);
